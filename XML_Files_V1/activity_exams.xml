@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Exams">
+
+    <EditText
+        android:id="@+id/finalExamGrade"
+        android:layout_width="113dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="218dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/examsNumText"
+        app:layout_constraintTop_toBottomOf="@+id/examsTitle" />
+
+    <Button
+        android:id="@+id/nextButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginRight="162dp"
+        android:layout_marginBottom="9dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsPercentText" />
+
+    <EditText
+        android:id="@+id/percentTotalExams"
+        android:layout_width="75dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="92dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/examsPercentText"
+        app:layout_constraintTop_toBottomOf="@+id/finalExamGrade" />
+
+    <TextView
+        android:id="@+id/examsTitle"
+        android:layout_width="345dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="Exams"
+        android:textColor="#3F51B5"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/examsNumText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/examsPercentText"
+        android:layout_width="330dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="What % of your total grade is the final exam?:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton5"
+        app:layout_constraintEnd_toStartOf="@+id/percentTotalExams"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsNumText" />
+
+    <TextView
+        android:id="@+id/examsNumText"
+        android:layout_width="273dp"
+        android:layout_height="480dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:text="Final Exam Grade %:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/examsPercentText"
+        app:layout_constraintEnd_toStartOf="@+id/finalExamGrade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
