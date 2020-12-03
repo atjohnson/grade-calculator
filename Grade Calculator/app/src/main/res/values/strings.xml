@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Grade Calculator</string>
-    <string name="welcome_msg_txt">Welcome to the Grade Calculator by TTC, Inc.</string>
-    <string name="start_button_txt">Get Started</string>
-</resources>
