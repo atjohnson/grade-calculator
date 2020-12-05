@@ -19,17 +19,17 @@ public class Quizzes extends Activity implements View.OnClickListener {
     private Button quizButton;
 
     //Creating EditText Objects for quiz grade inputs, percentage of class, and dropped assignments
-    private EditText quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8, quiz9, quiz10, quizpercent, quizdrop;
+    private EditText quiz1, quiz2, quiz3, quiz4, quiz5,  quizpercent, quizdrop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //sets the layout
-        setContentView(R.layout.?????);
+        setContentView(R.layout.activity_quizzes);
 
         //button linked to button in .xml
-        quizButton = (Button) findViewById(R.id.?????);
+        quizButton = (Button) findViewById(R.id.nextButton3);
 
         quizButton.setOnClickListener(this);
     }
@@ -44,18 +44,13 @@ public class Quizzes extends Activity implements View.OnClickListener {
         int i = 0;
 
         //Linking EditText values to objects
-        quiz1 = (EditText) findViewById(R.id.?????);
-        quiz2 = (EditText) findViewById(R.id.?????);
-        quiz3 = (EditText) findViewById(R.id.?????);
-        quiz4 = (EditText) findViewById(R.id.?????);
-        quiz5 = (EditText) findViewById(R.id.?????);
-        quiz6 = (EditText) findViewById(R.id.?????);
-        quiz7 = (EditText) findViewById(R.id.?????);
-        quiz8 = (EditText) findViewById(R.id.?????);
-        quiz9 = (EditText) findViewById(R.id.?????);
-        quiz10 = (EditText) findViewById(R.id.?????);
-        quizpercent = (EditText) findViewById(R.id.?????);
-        quizdrop = (EditText) findViewById(R.id.?????);
+        quiz1 = (EditText) findViewById(R.id.quiz1Grade);
+        quiz2 = (EditText) findViewById(R.id.quiz2Grade);
+        quiz3 = (EditText) findViewById(R.id.quiz3Grade);
+        quiz4 = (EditText) findViewById(R.id.quiz4Grade);
+        quiz5 = (EditText) findViewById(R.id.quiz5Grade);
+        quizpercent = (EditText) findViewById(R.id.percentTotalQuizzes);
+        quizdrop = (EditText) findViewById(R.id.numDroppedQuizzes);
 
         //Adds names of strings to vector of strings
         qz.add(quiz1.getText().toString());
@@ -63,14 +58,9 @@ public class Quizzes extends Activity implements View.OnClickListener {
         qz.add(quiz3.getText().toString());
         qz.add(quiz4.getText().toString());
         qz.add(quiz5.getText().toString());
-        qz.add(quiz6.getText().toString());
-        qz.add(quiz7.getText().toString());
-        qz.add(quiz8.getText().toString());
-        qz.add(quiz9.getText().toString());
-        qz.add(quiz10.getText().toString());
 
         //for loop to remove any unfilled text boxes
-        for(i = 9; i >= 0; i--)
+        for(i = 4; i >= 0; i--)
         {
             if(qz.get(i).equals(""))
             {
@@ -88,7 +78,7 @@ public class Quizzes extends Activity implements View.OnClickListener {
         String qp = quizpercent.getText().toString();
         if(qp.equals("")) //Toast to make sure a value is inputted
         {
-            Toast.makeText(Quizzes.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Quizzes.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         double QZPercent = Double.parseDouble(qp);
 
@@ -96,11 +86,11 @@ public class Quizzes extends Activity implements View.OnClickListener {
         String dropqz = quizdrop.getText().toString();
         if(dropqz.equals(""))
         {
-            Toast.makeText(Quizzes.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Quizzes.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         int qzDropped = Integer.parseInt(dropqz);
 
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.nextButton3)
         {
             GradeCalculation(quizzes,QZPercent, qzDropped);
         }

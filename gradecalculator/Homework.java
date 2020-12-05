@@ -26,10 +26,10 @@ public class Homework extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         //sets the layout
-        setContentView(R.layout.?????);
+        setContentView(R.layout.activity_homework);
 
         //button linked to button in .xml
-        hwButton = (Button) findViewById(R.id.?????);
+        hwButton = (Button) findViewById(R.id.button);
 
         hwButton.setOnClickListener(this);
     }
@@ -44,18 +44,18 @@ public class Homework extends Activity implements View.OnClickListener {
         int i = 0;
 
         //Linking EditText values to objects
-        hw1 = (EditText) findViewById(R.id.?????);
-        hw2 = (EditText) findViewById(R.id.?????);
-        hw3 = (EditText) findViewById(R.id.?????);
-        hw4 = (EditText) findViewById(R.id.?????);
-        hw5 = (EditText) findViewById(R.id.?????);
-        hw6 = (EditText) findViewById(R.id.?????);
-        hw7 = (EditText) findViewById(R.id.?????);
-        hw8 = (EditText) findViewById(R.id.?????);
-        hw9 = (EditText) findViewById(R.id.?????);
-        hw10 = (EditText) findViewById(R.id.?????);
-        hwpercent = (EditText) findViewById(R.id.?????);
-        hwdrop = (EditText) findViewById(R.id.?????);
+        hw1 = (EditText) findViewById(R.id.hw1Grade);
+        hw2 = (EditText) findViewById(R.id.hw2Grade);
+        hw3 = (EditText) findViewById(R.id.hw3Grade);
+        hw4 = (EditText) findViewById(R.id.hw4Grade);
+        hw5 = (EditText) findViewById(R.id.hw5Grade);
+        hw6 = (EditText) findViewById(R.id.hw6Grade);
+        hw7 = (EditText) findViewById(R.id.hw7Grade);
+        hw8 = (EditText) findViewById(R.id.hw8Grade);
+        hw9 = (EditText) findViewById(R.id.hw9Grade);
+        hw10 = (EditText) findViewById(R.id.hw10Grade);
+        hwpercent = (EditText) findViewById(R.id.percentTotalHW);
+        hwdrop = (EditText) findViewById(R.id.numDroppedHW);
 
         //Adds names of strings to vector of strings
         hw.add(hw1.getText().toString());
@@ -88,7 +88,7 @@ public class Homework extends Activity implements View.OnClickListener {
         String hp = hwpercent.getText().toString();
         if(hp.equals("")) //Toast to make sure a value is inputted
         {
-            Toast.makeText(Homework.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Homework.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         double HomeworkPercent = Double.parseDouble(hp);
 
@@ -96,11 +96,11 @@ public class Homework extends Activity implements View.OnClickListener {
         String drophw = hwdrop.getText().toString();
         if(drophw.equals(""))
         {
-            Toast.makeText(Homework.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Homework.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         int hwDropped = Integer.parseInt(drophw);
 
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.button)
         {
             GradeCalculation(homework,HomeworkPercent, hwDropped);
         }

@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         setContentView(R.layout.activity_main); //sets the layout
 
-        Button startButton = (Button) findViewById(R.id.button); //button linked to button in .xml
+        Button startButton = (Button) findViewById(R.id.startButton); //button linked to button in .xml
 
         startButton.setOnClickListener(this);
     }
@@ -32,7 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v)
     {
-            if(v.getId() == R.id.button)
+            if(v.getId() == R.id.startButton)
             {
                 Intent introScreen = new Intent(MainActivity.this,IntroScreen.class);
                 startActivity(introScreen);

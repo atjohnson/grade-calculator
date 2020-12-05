@@ -26,10 +26,10 @@ public class Exams extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         //sets the layout
-        setContentView(R.layout.?????);
+        setContentView(R.layout.activity_exams);
 
         //button linked to button in .xml
-        examButton = (Button) findViewById(R.id.?????);
+        examButton = (Button) findViewById(R.id.nextButton5);
 
         examButton.setOnClickListener(this);
     }
@@ -38,9 +38,9 @@ public class Exams extends Activity implements View.OnClickListener {
     public void onClick(View v)
     {
         //Vector created to hold inputs
-        Vector<String> ex = new Vector<String>();
+        Vector<String> ex = new Vector<>();
         //Vector created to hold doubles of values
-        Vector<Double> exam = new Vector<Double>();
+        Vector<Double> exam = new Vector<>();
         int i = 0;
 
         //Linking EditText values to objects
@@ -54,7 +54,7 @@ public class Exams extends Activity implements View.OnClickListener {
         ex8 = (EditText) findViewById(R.id.?????);
         ex9 = (EditText) findViewById(R.id.?????);
         ex10 = (EditText) findViewById(R.id.?????);
-        expercent = (EditText) findViewById(R.id.?????);
+        expercent = (EditText) findViewById(R.id.percentTotalExams);
         exdrop = (EditText) findViewById(R.id.?????);
 
         //Adds names of strings to vector of strings
@@ -88,7 +88,7 @@ public class Exams extends Activity implements View.OnClickListener {
         String ep = expercent.getText().toString();
         if(ep.equals("")) //Toast to make sure a value is inputted
         {
-            Toast.makeText(Exams.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Exams.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         double ExamPercent = Double.parseDouble(ep);
 
@@ -96,11 +96,11 @@ public class Exams extends Activity implements View.OnClickListener {
         String dropex = exdrop.getText().toString();
         if(dropex.equals(""))
         {
-            Toast.makeText(Exams.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Exams.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         int examsDropped = Integer.parseInt(dropex);
 
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.nextButton5)
         {
             GradeCalculation(exam,ExamPercent, examsDropped);
         }

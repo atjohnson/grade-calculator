@@ -26,10 +26,10 @@ public class Projects extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         //sets the layout
-        setContentView(R.layout.?????);
+        setContentView(R.layout.activity_projects);
 
         //button linked to button in .xml
-        projButton = (Button) findViewById(R.id.?????);
+        projButton = (Button) findViewById(R.id.nextButton6);
 
         projButton.setOnClickListener(this);
     }
@@ -54,7 +54,7 @@ public class Projects extends Activity implements View.OnClickListener {
         p8 = (EditText) findViewById(R.id.?????);
         p9 = (EditText) findViewById(R.id.?????);
         p10 = (EditText) findViewById(R.id.?????);
-        projpercent = (EditText) findViewById(R.id.?????);
+        projpercent = (EditText) findViewById(R.id.percentTotalProjects);
         projdrop = (EditText) findViewById(R.id.?????);
 
         //Adds names of strings to vector of strings
@@ -88,7 +88,7 @@ public class Projects extends Activity implements View.OnClickListener {
         String pp = projpercent.getText().toString();
         if(pp.equals("")) //Toast to make sure a value is inputted
         {
-            Toast.makeText(Projects.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Projects.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         double ProjectPercent = Double.parseDouble(pp);
 
@@ -96,11 +96,11 @@ public class Projects extends Activity implements View.OnClickListener {
         String dropp = projdrop.getText().toString();
         if(dropp.equals(""))
         {
-            Toast.makeText(Projects.this,"Please enter a value before proceeding!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Projects.this,"Please fill out all required boxes before proceeding!", Toast.LENGTH_LONG).show();
         }
         int projectsDropped = Integer.parseInt(dropp);
 
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.nextButton6)
         {
             GradeCalculation(projects, ProjectPercent, projectsDropped);
         }

@@ -14,9 +14,9 @@ public class IntroScreen extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.?????); //sets the layout
+        setContentView(R.layout.activity_welcome); //sets the layout
 
-        IntroButton = (Button) findViewById(R.id.?????); //button linked to button in .xml
+        IntroButton = (Button) findViewById(R.id.nextButton1); //button linked to button in .xml
 
         IntroButton.setOnClickListener(this);
     }
@@ -24,7 +24,7 @@ public class IntroScreen extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v)
     {
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.nextButton1)
         {
             Intent hwScreen = new Intent(IntroScreen.this,Homework.class);
             startActivity(hwScreen);

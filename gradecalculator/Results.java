@@ -22,25 +22,26 @@ public class Results extends Activity implements View.OnClickListener {
     Button finishButton;
 
     //Text Views to display results
-    private TextView homeworkText, quizzesText, labsText, examsText, projectsText, totalText;
+    private TextView homeworkText, quizzesText, labsText, examsText, projectsText, totalText, letterText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //sets the layout
-        setContentView(R.layout.?????);
+        setContentView(R.layout.activity_results);
 
         //button linked to button in .xml
-        finishButton = (Button) findViewById(R.id.?????);
+        finishButton = (Button) findViewById(R.id.endButton);
 
         //Setting the Text Views
-        homeworkText = (TextView) findViewById(R.id.?????);
-        quizzesText = (TextView) findViewById(R.id.?????);
-        labsText = (TextView) findViewById(R.id.?????);
-        examsText = (TextView) findViewById(R.id.?????);
-        projectsText = (TextView) findViewById(R.id.?????);
-        totalText = (TextView) findViewById(R.id.?????);
+        homeworkText = (TextView) findViewById(R.id.finalGradeHW);
+        quizzesText = (TextView) findViewById(R.id.finalGradeQuizzes);
+        labsText = (TextView) findViewById(R.id.finalGradeLabs);
+        examsText = (TextView) findViewById(R.id.finalGradeExams);
+        projectsText = (TextView) findViewById(R.id.finalGradeProjects);
+        totalText = (TextView) findViewById(R.id.finalGradeOvr);
+        letterText = (TextView) findViewById(R.id.finalGradeLetter);
 
         //Runs the DisplayGrades method
         DisplayGrades();
@@ -51,7 +52,7 @@ public class Results extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v)
     {
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.endButton)
         {
             Intent hereWeGoAgain = new Intent(Results.this,MainActivity.class);
             startActivity(hereWeGoAgain);
@@ -79,10 +80,38 @@ public class Results extends Activity implements View.OnClickListener {
         //Calculates value of total grade
         double totalGrade = homeworkTotal + quizTotal + labTotal + examTotal + projectTotal;
 
+        //Gets letter grade
+        String letter;
+        if(totalGrade>89.9)
+        {
+            letter = "A";
+        }
+        else if(totalGrade>79.9 && totalGrade<90.0)
+        {
+            letter = "B";
+        }
+        else if(totalGrade>69.9 && totalGrade<80.0)
+        {
+            letter = "C";
+        }
+        else if(totalGrade>59.9 && totalGrade<70.0)
+        {
+            letter = "D";
+        }
+        else
+        {
+            letter = "F";
+        }
+
         //Displays total grade
         String gradeText = totalText.getText().toString();
         gradeText = gradeText + totalGrade +"%";
         totalText.setText(gradeText);
+
+        //Displays letter grade
+        String letText = letterText.getText().toString();
+        letText = letText + letter;
+        letterText.setText(letText);
 
         //Displays hw grade
         String hwText = homeworkText.getText().toString();

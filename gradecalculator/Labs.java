@@ -26,10 +26,10 @@ public class Labs extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         //sets the layout
-        setContentView(R.layout.?????);
+        setContentView(R.layout.activity_labs);
 
         //button linked to button in .xml
-        labButton = (Button) findViewById(R.id.?????);
+        labButton = (Button) findViewById(R.id.nextButton4);
 
         labButton.setOnClickListener(this);
     }
@@ -44,18 +44,18 @@ public class Labs extends Activity implements View.OnClickListener {
         int i = 0;
 
         //Linking EditText values to objects
-        lab1 = (EditText) findViewById(R.id.?????);
-        lab2 = (EditText) findViewById(R.id.?????);
-        lab3 = (EditText) findViewById(R.id.?????);
-        lab4 = (EditText) findViewById(R.id.?????);
-        lab5 = (EditText) findViewById(R.id.?????);
-        lab6 = (EditText) findViewById(R.id.?????);
-        lab7 = (EditText) findViewById(R.id.?????);
-        lab8 = (EditText) findViewById(R.id.?????);
-        lab9 = (EditText) findViewById(R.id.?????);
-        lab10 = (EditText) findViewById(R.id.?????);
-        labpercent = (EditText) findViewById(R.id.?????);
-        labdrop = (EditText) findViewById(R.id.?????);
+        lab1 = (EditText) findViewById(R.id.lab1Grade);
+        lab2 = (EditText) findViewById(R.id.lab2Grade);
+        lab3 = (EditText) findViewById(R.id.lab3Grade);
+        lab4 = (EditText) findViewById(R.id.lab4Grade);
+        lab5 = (EditText) findViewById(R.id.lab5Grade);
+        lab6 = (EditText) findViewById(R.id.lab6Grade);
+        lab7 = (EditText) findViewById(R.id.lab7Grade);
+        lab8 = (EditText) findViewById(R.id.lab8Grade);
+        lab9 = (EditText) findViewById(R.id.lab9Grade);
+        lab10 = (EditText) findViewById(R.id.lab10Grade);
+        labpercent = (EditText) findViewById(R.id.percentTotalLabs);
+        labdrop = (EditText) findViewById(R.id.numDroppedLabs);
 
         //Adds names of strings to vector of strings
         lab.add(lab1.getText().toString());
@@ -100,7 +100,7 @@ public class Labs extends Activity implements View.OnClickListener {
         }
         int labsDropped = Integer.parseInt(droplab);
 
-        if(v.getId() == R.id.?????)
+        if(v.getId() == R.id.nextButton4)
         {
             GradeCalculation(labs,LabsPercent, labsDropped);
         }
