@@ -15,7 +15,6 @@
         <activity android:name=".Labs" />
         <activity android:name=".Quizzes" />
         <activity android:name=".Homework" />
-        <activity android:name=".Welcome" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
